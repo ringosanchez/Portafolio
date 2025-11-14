@@ -1,0 +1,204 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: transparent; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative; 
+}
+
+#videoFondo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100; 
+    object-fit: cover;
+}
+body::before {
+    content: '';
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/vid\ fon.mp4'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.9; 
+    z-index: -1; 
+}
+#overlayBlur {
+    width: 100%;
+    border-radius: 10px;
+    min-height: 100%; 
+    backdrop-filter: blur(10px);
+    background-color: rgba(44, 44, 44, 0.365); 
+}
+.hidden {
+    display: none !important;
+}
+.formulario{
+    margin-top: -20px;
+    height: 100%;
+}
+
+#login-panel, #register-panel {
+    background: #ffffff00;
+    padding: 10px  ;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgb(255, 255, 255);
+    width: 100%;
+    max-width: 500px;
+    margin: 20px 0; 
+    box-sizing: border-box;
+    position: relative; 
+    z-index: 1;
+}
+
+.Titulo-incio, .Tiulo-Registro h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-weight: 600;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 10px;
+}
+
+.formulario input[type="text"], 
+.formulario input[type="password"],
+.Inicio-Registro input[type="text"],
+.Inicio-Registro input[type="email"],
+.Inicio-Registro input[type="password"],
+.Inicio-Registro input[type="date"],
+.Inicio-Registro select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    transition: border-color 0.3s;
+}
+
+.formulario input:focus, 
+.Inicio-Registro input:focus,
+.Inicio-Registro select:focus {
+    border-color: #007bff; 
+    outline: none;
+}
+
+.Inicio-Registro select {
+    appearance: none; 
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%2069a17.6%2017.6%200%200%00-30%200L146%20206.8%2035%2069a17.6%2017.6%200%200%00-30%200%2017.6%2017.6%200%200%000%2030l126%20126c11.2%2011.2%2030.8%2011.2%2042%200l126-126a17.6%2017.6%200%200%000-30z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    cursor: pointer;
+    padding-right: 30px;
+}
+
+.boton-enviar, .Boton-Cancelar {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 48%; 
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.boton-enviar {
+    background-color: #007bff; 
+    color: white;
+    float: left; 
+}
+
+.boton-enviar:hover {
+    background-color: #363636;
+    transform: translateY(-1px);
+}
+.Boton-Cancelar {
+    background-color: #04ff00; 
+    color: white;
+    float: right; 
+    margin-bottom: 10px;
+}
+
+.Boton-Cancelar:hover {
+    background-color: #5a6268;
+    transform: translateY(-1px);
+}
+
+
+.Inicio-Registro form {
+    display: flex;
+    
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.Inicio-Registro .boton-enviar, .Inicio-Registro .Boton-Cancelar {
+    width: 100%; 
+    float: none;
+}
+
+#login-panel .formulario form button {
+    width: 100%;
+    float: none; 
+}
+#login-panel .formulario form .boton-enviar {
+    margin-bottom: 10px;
+    background-color: #008cff; 
+    color: white;
+}
+#login-panel .formulario form .Boton-Cancelar {
+    background-color: #15ff00; 
+    color: white;
+}
+#login-panel .formulario form .boton-enviar:hover {
+    background-color: #404040;
+}
+#login-panel .formulario form .Boton-Cancelar:hover {
+    background-color: #5a6268;
+}
+
+.formulario::after, .Inicio-Registro::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.btn-volver {
+    /* PROPIEDADES COINCIDENTES CON .boton-enviar y .Boton-Cancelar */
+    padding: 10px 10px;      /* Espaciado interno igual */
+    border-radius: 5px;      /* Bordes redondeados iguales */
+    cursor: pointer;
+    font-size: 16px;         /* Tamaño de fuente igual */
+    font-weight: bold;       /* Negrita igual */
+    transition: background-color 0.3s, transform 0.1s; /* Transiciones iguales */
+
+    /* APARIENCIA DEL BOTÓN DE VOLVER (SECUNDARIO) */
+    background-color: red; /* Mantenemos el fondo transparente */
+    color: #ffffff;           /* Texto blanco */
+    border: 1px solid #808080; /* Borde sutil, ya que el original tenía 'border: none;' */
+    
+    /* CONTROL DE TAMAÑO Y POSICIÓN */
+    width: auto;             /* Lo dejamos en auto para que solo ocupe el espacio del texto */
+    margin-top: 1px;        /* Margen superior igual */       
+}
+
+.btn-volver:hover {
+    background-color: #555555; 
+    border-color: #555555; 
+    transform: scale(1.0); /* Eliminamos la escala para que coincida con la transición de 0.1s */
+}
