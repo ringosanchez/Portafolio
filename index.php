@@ -20,7 +20,7 @@ session_start();
 
 
     <header>
-        <div class="encabezado">
+        <div class="encabezadooo">
             <img src="img/IMG-20250918-WA0004.jpg" alt="logo">
             <h2>Ringo Sanchez</h2>
 
